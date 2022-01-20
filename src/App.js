@@ -13,6 +13,7 @@ import BoardUser from "./components/board-user.component";
 import BoardModerator from "./components/board-moderator.component";
 import BoardAdmin from "./components/board-admin.component";
 import Proba from "./components/sajatosztalyok/Proba";
+import Anyagok from "./components/sajatosztalyok/Anyagok";
 
 // import AuthVerify from "./common/auth-verify";
 import EventBus from "./common/EventBus";
@@ -73,7 +74,12 @@ class App extends Component {
                 Home
               </Link>
             </li>
-
+            <Link to={"/Proba"} className="nav-link">
+                Próba
+              </Link>
+              <Link to={"/Anyagok"} className="nav-link">
+                Anyagok
+              </Link>
             {showModeratorBoard && (
               <li className="nav-item">
                 <Link to={"/mod"} className="nav-link">
@@ -139,6 +145,8 @@ class App extends Component {
             <Route path="/mod" component={BoardModerator} />
             <Route path="/admin" component={BoardAdmin} />
             <Route path="/Proba" component={Proba}/>
+            <Route path="/Anyagok" component={Anyagok}/>
+            
           </Switch>
         </div>
 
