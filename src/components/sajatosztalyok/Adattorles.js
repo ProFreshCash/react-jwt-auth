@@ -14,7 +14,7 @@ export default class FetchExample extends React.Component {
       bevitel1:szam
     }
 
-  fetch("http://localhost:3000/anyagtorles", {
+  fetch("http://localhost:8080/anyagtorles", {
       method: "POST",
       body: JSON.stringify(bemenet),
       headers: {"Content-type": "application/json; charset=UTF-8"}
@@ -28,7 +28,7 @@ export default class FetchExample extends React.Component {
 
 
   componentDidMount(){
-    return fetch('http://localhost:3000/anyagok')
+    return fetch('http://localhost:8080/anyagok')
       .then((response) => response.json())
       .then((responseJson) => {
 
@@ -68,11 +68,11 @@ export default class FetchExample extends React.Component {
           <Text style={{color:"brown",fontSize:20,textAlign:"center",marginTop:15,marginBottom:5}}   >{item.anyag_mennyiseg} </Text>
           <Text style={{color:"brown",fontSize:20,textAlign:"center",marginTop:15,marginBottom:5}}   >{item.anyag_ar} </Text>
           <Text style={{color:"brown",fontSize:20,textAlign:"center",marginTop:15,marginBottom:5}}   >{item.anyag_rendelo} </Text>
-          <Image  source={{uri: 'http://localhost:3000/'+item.anyag_kep}} style={{width:300,height:300,marginLeft:"auto",marginRight:"auto"}} />  
+          <Image  source={{uri: 'http://localhost:8080/'+item.anyag_kep}} style={{width:300,height:300,marginLeft:"auto",marginRight:"auto"}} />  
 0
           <TouchableOpacity
         style={styles.kekgomb}
-        onPress={async ()=>this.szavazat(item.film_id)}
+        onPress={async ()=>this.szavazat(item.anyag_id)}
       >
         <Text style={{color:"white",fontWeight:"bold",fontSize:15}}  >Törlés</Text>
       </TouchableOpacity>
@@ -81,7 +81,7 @@ export default class FetchExample extends React.Component {
         }
 
         
-          keyExtractor={({film_id}, index) => film_id}
+          keyExtractor={({anyag_id}, index) => anyag_id}
         />
       </View>
     );
