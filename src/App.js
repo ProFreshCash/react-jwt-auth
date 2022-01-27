@@ -13,8 +13,8 @@ import BoardUser from "./components/board-user.component";
 import BoardModerator from "./components/board-moderator.component";
 import BoardAdmin from "./components/board-admin.component";
 import Proba from "./components/sajatosztalyok/Proba";
-import Anyagok from "./components/sajatosztalyok/Anyagok";
 import Adattorles from "./components/sajatosztalyok/Adattorles";
+import Felvitel from "./components/sajatosztalyok/Felvitel";
 
 // import AuthVerify from "./common/auth-verify";
 import EventBus from "./common/EventBus";
@@ -78,11 +78,11 @@ class App extends Component {
             <Link to={"/Proba"} className="nav-link">
                 Próba
               </Link>
-              <Link to={"/Anyagok"} className="nav-link">
-                Anyagok
-              </Link>
               <Link to={"/Adattorles"} className="nav-link">
-                Anyag id törlése
+                Anyagok törlése
+              </Link>
+              <Link to={"/Felvitel"} className="nav-link">
+                Anyagok felvitele
               </Link>
             {showModeratorBoard && (
               <li className="nav-item">
@@ -149,8 +149,8 @@ class App extends Component {
             <Route path="/mod" component={BoardModerator} />
             <Route path="/admin" component={BoardAdmin} />
             <Route path="/Proba" component={Proba}/>
-            <Route path="/Anyagok" component={Anyagok}/>
             <Route path="/Adattorles" component={Adattorles}/>
+            <Route path="/Felvitel" component={Felvitel}/>
             
           </Switch>
         </div>

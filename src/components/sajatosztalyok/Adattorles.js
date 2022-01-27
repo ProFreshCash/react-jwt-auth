@@ -24,6 +24,8 @@ export default class FetchExample extends React.Component {
   .then(x => x.text())
   .then(y => alert(y));
 
+  window.location.reload();
+  this.setState({});
   }
 
 
@@ -69,7 +71,6 @@ export default class FetchExample extends React.Component {
           <Text style={{color:"brown",fontSize:20,textAlign:"center",marginTop:15,marginBottom:5}}   >{item.anyag_ar} </Text>
           <Text style={{color:"brown",fontSize:20,textAlign:"center",marginTop:15,marginBottom:5}}   >{item.anyag_rendelo} </Text>
           <Image  source={{uri: 'http://localhost:8080/'+item.anyag_kep}} style={{width:300,height:300,marginLeft:"auto",marginRight:"auto"}} />  
-0
           <TouchableOpacity
         style={styles.kekgomb}
         onPress={async ()=>this.szavazat(item.anyag_id)}
