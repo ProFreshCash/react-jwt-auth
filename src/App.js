@@ -14,7 +14,7 @@ import BoardModerator from "./components/board-moderator.component";
 import BoardAdmin from "./components/board-admin.component";
 import Proba from "./components/sajatosztalyok/Proba";
 import Adattorles from "./components/sajatosztalyok/Adattorles";
-//dsimport Felvitel from "./components/sajatosztalyok/Felvitel";
+import Felvitel from "./components/sajatosztalyok/Felvitel";
 import { Nav, Navbar, NavDropdown } from "react-bootstrap";
 
 
@@ -70,7 +70,7 @@ class App extends Component {
         <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
           <Navbar.Brand href="#home">
             <Link to={"/"} className="navbar-brand">
-              Tippi
+              ProFreshCash
             </Link>
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
@@ -105,9 +105,15 @@ class App extends Component {
                 </Link>
               </Nav.Link>)}
               
-              {currentUser && ( <Nav.Link>
+              {showAdminBoard && ( <Nav.Link>
                 <Link to={"/Adattorles"} className="nav-link">
                   Anyagok Törlése
+                </Link>
+              </Nav.Link>)}
+
+              {showAdminBoard && ( <Nav.Link>
+                <Link to={"/Felvitel"} className="nav-link">
+                  Új áru felvitele
                 </Link>
               </Nav.Link>)}
 
@@ -157,6 +163,7 @@ class App extends Component {
             <Route path="/admin" component={BoardAdmin} />
             <Route path="/Proba" component={Proba}/>
             <Route path="/Adattorles" component={Adattorles}/>
+            <Route path="/Felvitel" component={Felvitel}/>
             
           </Switch>
         </div>
