@@ -1,90 +1,101 @@
-import React from 'react';
-import {StyleSheet, FlatList, ActivityIndicator, Text, View, TextInput, TouchableOpacity} from 'react-native';
+import React, { Component } from 'react';
+import { StyleSheet,Text, TextInput, View,TouchableOpacity } from 'react-native';
 
-export default class FetchExample extends React.Component {
-
-  constructor(props){
+export default class Bevitel extends Component {
+  constructor(props) {
     super(props);
-    this.state ={ isLoading: true}
+    this.state = {
+
+        nev: '',
+        komment:""
+
+    };
   }
 
-  szavazat=(szam)=>{
-    //alert(szam)
-    var bemenet={
-      bevitel1:szam
-    }
-  }
+felvitel=async ()=>{
+    //alert("megnyomva a gomb")
 
-  adatfel=()=>
-{
-    var adatok={
-        nev:document.getElementById("nev").value,
-        ar:document.getElementById("ar").value,
-        szin:document.getElementById("szin").value,
-        meret:document.getElementById("meret").value,
-        anyag:document.getElementById("anyag").value,
-    }
-
-    fetch("http://localhost:8080/uj_anyag_fel",
+    if (this.state.nev=="" || this.state.komment=="")
     {
-        method: "POST",
-        body: JSON.stringify(adatok),
-        headers: {"Content-type":"application/json; charset=UTF-8"}
+      alert("Add meg a nevet és a kommmentet!")
+      return
     }
+    let bemenet={
+      bevitel1:this.state.nev,
+      bevitel2:this.state.komment,
+      bevitel3:this.props.akttema_bevitel
+    }
+
+    fetch('http://localhost:8080/uj_anyag_fel',{
+      method: "POST",
+      body: JSON.stringify(bemenet),
+      headers: {"Content-type": "application/json; charset=UTF-8"}
+    }
+       
     )
-    .then(x => x.text())
-    .then(y => alert(y))
+    .then((response) => response.text())
+    .then((szoveg) => {
+
+    alert(szoveg)
     window.location.reload();
     this.setState({});
-  }
 
-  render(){
+})
+    
+}
 
-    if(this.state.isLoading){
-      return(
-        <View style={{flex: 1, padding: 20}}>
-          <ActivityIndicator/>
-        </View>
-      )
-    }
 
-    return(
-      <View style={{flex: 1, paddingTop:20}}>
-        <FlatList
-          data={this.state.dataSource}
-          renderItem={({item}) => 
-
-          <View>
-            <View>
-            <Text style={{fontSize:24}}></Text>
-            <TextInput style={{Width: 200, Height: 20, }}/>
-            </View>
-          <TouchableOpacity
-            style={styles.kekgomb}
-            onPress={this.adatfel()}
-            >
-            <Text style={{color:"white",fontWeight:"bold",fontSize:15}}  >Felvitel</Text>
-            </TouchableOpacity>
-          </View>
-        
-        }
-
-        
-          keyExtractor={({anyag_id}, index) => anyag_id}
+  render() {
+    return (
+    <View style = {{backgroundColor:'darkblue',width:'80%',borderRadius:20,alignSelf:'center'}}>
+      <View style={{padding: 10}}>
+          <Text style={{padding: 10, fontSize: 22,color:'white',textAlign:'center'}}>
+              Név:
+          </Text>
+        <TextInput
+          placeholderTextColor="white"
+          style={{height: 40,width:'50%',alignSelf:'center',backgroundColor:'blue',borderColor:'black',color:"white"}}
+          placeholder="Add meg a neved:"
+          onChangeText={(nev) => this.setState({nev})}
+          value={this.state.nev}
         />
+
+        <Text style={{paddingTop: 10, fontSize: 22,color:'white',textAlign:'center'}}>
+              Komment:
+          </Text>
+        <TextInput
+          placeholderTextColor="white"
+          style={{height: 120, width:'50%',alignSelf:'center',backgroundColor:'blue',marginBottom:5,textAlignVertical:'top',color:"white"}}
+          placeholder="Add meg a kommentet:"
+          onChangeText={(komment) => this.setState({komment})}
+          value={this.state.komment}
+        />
+         <TouchableOpacity
+          onPress={async ()=>this.felvitel()}>
+          <View style={styles.gomb}>
+            <Text style={styles.gombSzoveg}>Felvitel</Text>
+          </View>
+        </TouchableOpacity>
+        
       </View>
+    </View>
     );
   }
 }
 
 const styles = StyleSheet.create({
-  
-  kekgomb: {
-    alignItems: "center",
-    backgroundColor: "blue",
-    padding: 10,
-    width:300,
-    marginLeft:"auto",
-    marginRight:"auto",
-  }
+    gombSzoveg:{
+            textAlign:'center',
+            color:'white',
+            marginTop:'auto',
+            marginBottom:'auto',
+            fontSize:25
+    },
+    gomb:{
+            height:45,
+            backgroundColor:'blue',
+            width:'45%',
+            alignSelf:'center',
+            borderRadius:10
+    },
 });
