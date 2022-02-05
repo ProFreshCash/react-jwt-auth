@@ -68,7 +68,7 @@ class App extends Component {
     return (
       <div>
         <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
-          <Navbar.Brand href="#home">
+          <Navbar.Brand href="/home">
             <Link to={"/"} className="navbar-brand">
               ProFreshCash
             </Link>
@@ -128,7 +128,7 @@ class App extends Component {
                       </Nav.Link>
                     <Nav.Link>
                       <a href="/login" className="nav-link" onClick={this.logOut}>
-                        LogOut
+                        Kijelentkezés
                       </a>
                     </Nav.Link>
                   </Nav>
@@ -137,13 +137,13 @@ class App extends Component {
                   <div className="navbar-nav ml-auto">
                     <Nav.Link>
                       <Link to={"/login"} className="nav-link">
-                        Login
+                        Bejelentkezés
                       </Link>
                     </Nav.Link>
 
                     <Nav.Link>
                       <Link to={"/register"} className="nav-link">
-                        Sign Up
+                        Regisztráció
                       </Link>
                     </Nav.Link>
                   </div>

@@ -1,13 +1,18 @@
 import React, { Component } from 'react';
 import { StyleSheet,Text, TextInput, View,TouchableOpacity } from 'react-native';
+import FileUpload from "./upload"
 
 export default class Bevitel extends Component {
   constructor(props) {
     super(props);
     this.state = {
 
-        bev: '',
-        komment:""
+      anyag_nevesmeret: "",
+      anyag_mennyiseg:"",
+      anyag_ar:"",
+      anyag_rendelo:"",
+      anyag_kep:"",
+      anyag_leiras:""
 
     };
   }
@@ -15,15 +20,18 @@ export default class Bevitel extends Component {
 felvitel=async ()=>{
     //alert("megnyomva a gomb")
 
-    if (this.state.nev=="" || this.state.komment=="")
+    if (this.state.anyag_nevesmeret=="" || this.state.anyag_mennyiseg=="" || this.state.anyag_ar=="" || this.state.anyag_rendelo=="" || this.state.anyag_kep=="" || this.state.anyag_leiras=="")
     {
-      alert("Add meg a nevet és a kommmentet!")
+      alert("Hiányzó adatok!")
       return
     }
     let bemenet={
-      bevitel1:this.state.nev,
-      bevitel2:this.state.komment,
-      bevitel3:this.props.akttema_bevitel
+      bev1:this.state.anyag_nevesmeret,
+      bev2:this.state.anyag_mennyiseg,
+      bev3:this.state.anyag_ar,
+      bev4:this.state.anyag_rendelo,
+      bev5:this.state.anyag_kep,
+      bev6:this.state.anyag_leiras
     }
 
     fetch('http://localhost:8080/uj_anyag_fel',{
@@ -46,7 +54,9 @@ felvitel=async ()=>{
 
 
   render() {
+    
     return (
+      
     <View style = {{backgroundColor:'darkblue',width:'80%',borderRadius:20,alignSelf:'center'}}>
       <View style={{padding: 10}}>
           <Text style={{padding: 10, fontSize: 22,color:'white',textAlign:'center'}}>
@@ -56,8 +66,8 @@ felvitel=async ()=>{
           placeholderTextColor="white"
           style={{height: 40,width:'50%',alignSelf:'center',backgroundColor:'blue',borderColor:'black',color:"white"}}
           placeholder="Pl: deszka 80x60"
-          onChangeText={(nev) => this.setState({nev})}
-          value={this.state.nev}
+          onChangeText={(anyag_nevesmeret) => this.setState({anyag_nevesmeret})}
+          value={this.state.anyag_nevesmeret}
         />
 
         <Text style={{paddingTop: 10, fontSize: 22,color:'white',textAlign:'center'}}>
@@ -67,8 +77,8 @@ felvitel=async ()=>{
           placeholderTextColor="white"
           style={{height: 40, width:'50%',alignSelf:'center',backgroundColor:'blue',marginBottom:5,textAlignVertical:'top',color:"white"}}
           placeholder="Add meg a mennyiségét:"
-          onChangeText={(komment) => this.setState({komment})}
-          value={this.state.komment}
+          onChangeText={(anyag_mennyiseg) => this.setState({anyag_mennyiseg})}
+          value={this.state.anyag_mennyiseg}
         />
          <Text style={{padding: 10, fontSize: 22,color:'white',textAlign:'center'}}>
               Ára:
@@ -77,9 +87,21 @@ felvitel=async ()=>{
           placeholderTextColor="white"
           style={{height: 40,width:'50%',alignSelf:'center',backgroundColor:'blue',borderColor:'black',color:"white"}}
           placeholder="Add meg az árát a terméknek: "
-          onChangeText={(nev) => this.setState({nev})}
-          value={this.state.nev}
+          onChangeText={(anyag_ar) => this.setState({anyag_ar})}
+          value={this.state.anyag_ar}
         />
+
+        <Text style={{padding: 10, fontSize: 22,color:'white',textAlign:'center'}}>
+              Rendelő:
+          </Text>
+        <TextInput
+          placeholderTextColor="white"
+          style={{height: 40,width:'50%',alignSelf:'center',backgroundColor:'blue',borderColor:'black',color:"white"}}
+          placeholder="Add meg a termék megrendelőjét: "
+          onChangeText={(anyag_rendelo) => this.setState({anyag_rendelo})}
+          value={this.state.anyag_rendelo}
+        />
+
          <Text style={{padding: 10, fontSize: 22,color:'white',textAlign:'center'}}>
               Anyag képe:
           </Text>
@@ -87,8 +109,8 @@ felvitel=async ()=>{
           placeholderTextColor="white"
           style={{height: 40,width:'50%',alignSelf:'center',backgroundColor:'blue',borderColor:'black',color:"white"}}
           placeholder="Kép feltöltése:"
-          onChangeText={(nev) => this.setState({nev})}
-          value={this.state.nev}
+          onChangeText={(anyag_kep) => this.setState({anyag_kep})}
+          value={this.state.anyag_kep}
         />
          <Text style={{padding: 10, fontSize: 22,color:'white',textAlign:'center'}}>
               Anyag leírása:
@@ -97,8 +119,8 @@ felvitel=async ()=>{
           placeholderTextColor="white"
           style={{height: 40,width:'50%',alignSelf:'center',backgroundColor:'blue',borderColor:'black',color:"white"}}
           placeholder="Add meg a leírását:"
-          onChangeText={(nev) => this.setState({nev})}
-          value={this.state.nev}
+          onChangeText={(anyag_leiras) => this.setState({anyag_leiras})}
+          value={this.state.anyag_leiras}
         />
          <TouchableOpacity
           onPress={async ()=>this.felvitel()}>
@@ -106,7 +128,7 @@ felvitel=async ()=>{
             <Text style={styles.gombSzoveg}>Adatok felvitele</Text>
           </View>
         </TouchableOpacity>
-        
+        <FileUpload  anyag_nevesmeret={this.state.anyag_nevesmeret} anyag_mennyiseg={this.state.anyag_mennyiseg} anyag_ar={this.state.anyag_ar} anyag_rendelo={this.state.anyag_rendelo} anyag_kep={this.state.anyag_kep} anyag_leiras={this.state.anyag_leiras}></FileUpload>
       </View>
     </View>
     );
