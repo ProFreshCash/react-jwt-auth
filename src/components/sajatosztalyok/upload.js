@@ -22,14 +22,13 @@ function FileUpload(props) {
             );
             console.log(res);
             let bemenet={
-                bev1:props.anyag_nevesmeret,
-                bev2:props.anyag_mennyiseg,
-                bev3:props.anyag_ar,
-                bev4:props.anyag_rendelo,
-                bev5:props.anyag_kep,
-                bev6:props.anyag_leiras
+                bev1:props.hos_id,
+                bev2:props.hos_nev,
+                bev3:props.role_id,
+                bev4:props.hos_leiras,
+                bev5:props.kep,
             }
-            fetch('http://localhost:8080/uj_anyag_fel',{
+            fetch('http://localhost:8080/uj_hos_fel',{
       method: "POST",
       body: JSON.stringify(bemenet),
       headers: {"Content-type": "application/json; charset=UTF-8"}

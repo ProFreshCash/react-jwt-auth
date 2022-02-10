@@ -7,12 +7,11 @@ export default class Bevitel extends Component {
     super(props);
     this.state = {
 
-      anyag_nevesmeret: "",
-      anyag_mennyiseg:"",
-      anyag_ar:"",
-      anyag_rendelo:"",
-      anyag_kep:"",
-      anyag_leiras:""
+      hos_id: "",
+      hos_nev:"",
+      role_id:"",
+      hos_leiras:"",
+      kep:"",
 
     };
   }
@@ -20,21 +19,20 @@ export default class Bevitel extends Component {
 felvitel=async ()=>{
     //alert("megnyomva a gomb")
 
-    if (this.state.anyag_nevesmeret=="" || this.state.anyag_mennyiseg=="" || this.state.anyag_ar=="" || this.state.anyag_rendelo=="" || this.state.anyag_kep=="" || this.state.anyag_leiras=="")
+    if (this.state.hos_id=="" || this.state.hos_nev=="" || this.state.role_id=="" || this.state.hos_leiras=="" || this.state.kep=="")
     {
       alert("Hiányzó adatok!")
       return
     }
     let bemenet={
-      bev1:this.state.anyag_nevesmeret,
-      bev2:this.state.anyag_mennyiseg,
-      bev3:this.state.anyag_ar,
-      bev4:this.state.anyag_rendelo,
-      bev5:this.state.anyag_kep,
-      bev6:this.state.anyag_leiras
+      bev1:this.state.hos_id,
+      bev2:this.state.hos_nev,
+      bev3:this.state.role_id,
+      bev4:this.state.hos_leiras,
+      bev5:this.state.kep,
     }
 
-    fetch('http://localhost:8080/uj_anyag_fel',{
+    fetch('http://localhost:8080/uj_hos_fel',{
       method: "POST",
       body: JSON.stringify(bemenet),
       headers: {"Content-type": "application/json; charset=UTF-8"}
@@ -60,75 +58,65 @@ felvitel=async ()=>{
     <View style = {{backgroundColor:'darkblue',width:'80%',borderRadius:20,alignSelf:'center'}}>
       <View style={{padding: 10}}>
           <Text style={{padding: 10, fontSize: 22,color:'white',textAlign:'center'}}>
-              Anyag neve és mérete:
+              Hős id:
           </Text>
         <TextInput
           placeholderTextColor="white"
           style={{height: 40,width:'50%',alignSelf:'center',backgroundColor:'blue',borderColor:'black',color:"white"}}
-          placeholder="Pl: deszka 80x60"
-          onChangeText={(anyag_nevesmeret) => this.setState({anyag_nevesmeret})}
-          value={this.state.anyag_nevesmeret}
+          placeholder="Pl: adatbázis szerint a következő"
+          onChangeText={(hos_id) => this.setState({hos_id})}
+          value={this.state.hos_id}
         />
 
         <Text style={{paddingTop: 10, fontSize: 22,color:'white',textAlign:'center'}}>
-              Mennyisége:
+              Hős neve:
           </Text>
         <TextInput
           placeholderTextColor="white"
           style={{height: 40, width:'50%',alignSelf:'center',backgroundColor:'blue',marginBottom:5,textAlignVertical:'top',color:"white"}}
-          placeholder="Add meg a mennyiségét:"
-          onChangeText={(anyag_mennyiseg) => this.setState({anyag_mennyiseg})}
-          value={this.state.anyag_mennyiseg}
+          placeholder="Add meg a nevét:"
+          onChangeText={(hos_nev) => this.setState({hos_nev})}
+          value={this.state.hos_nev}
         />
          <Text style={{padding: 10, fontSize: 22,color:'white',textAlign:'center'}}>
-              Ára:
+              Szerepkör id:
           </Text>
         <TextInput
           placeholderTextColor="white"
           style={{height: 40,width:'50%',alignSelf:'center',backgroundColor:'blue',borderColor:'black',color:"white"}}
-          placeholder="Add meg az árát a terméknek: "
-          onChangeText={(anyag_ar) => this.setState({anyag_ar})}
-          value={this.state.anyag_ar}
+          placeholder="Pl: adatbázis szerint a megfelelő"
+          onChangeText={(role_id) => this.setState({role_id})}
+          value={this.state.role_id}
         />
 
         <Text style={{padding: 10, fontSize: 22,color:'white',textAlign:'center'}}>
-              Rendelő:
+              Hős leírása:
           </Text>
         <TextInput
           placeholderTextColor="white"
           style={{height: 40,width:'50%',alignSelf:'center',backgroundColor:'blue',borderColor:'black',color:"white"}}
-          placeholder="Add meg a termék megrendelőjét: "
-          onChangeText={(anyag_rendelo) => this.setState({anyag_rendelo})}
-          value={this.state.anyag_rendelo}
+          placeholder="Add meg a hős leírását: "
+          onChangeText={(hos_leiras) => this.setState({hos_leiras})}
+          value={this.state.hos_leiras}
         />
 
          <Text style={{padding: 10, fontSize: 22,color:'white',textAlign:'center'}}>
-              Anyag képe:
+              Hős képe:
           </Text>
         <TextInput
           placeholderTextColor="white"
           style={{height: 40,width:'50%',alignSelf:'center',backgroundColor:'blue',borderColor:'black',color:"white"}}
-          placeholder="Kép feltöltése:"
-          onChangeText={(anyag_kep) => this.setState({anyag_kep})}
-          value={this.state.anyag_kep}
-        />
-         <Text style={{padding: 10, fontSize: 22,color:'white',textAlign:'center'}}>
-              Anyag leírása:
-          </Text>
-        <TextInput
-          placeholderTextColor="white"
-          style={{height: 40,width:'50%',alignSelf:'center',backgroundColor:'blue',borderColor:'black',color:"white"}}
-          placeholder="Add meg a leírását:"
-          onChangeText={(anyag_leiras) => this.setState({anyag_leiras})}
-          value={this.state.anyag_leiras}
+          placeholder="Pl: hoskepe.jpg"
+          onChangeText={(kep) => this.setState({kep})}
+          value={this.state.kep}
         />
          <TouchableOpacity
           onPress={async ()=>this.felvitel()}>
           <View style={styles.gomb}>
-            <Text style={styles.gombSzoveg}>Adatok felvitele</Text>
+            <Text style={styles.gombSzoveg}>Feltöltés</Text>
           </View>
         </TouchableOpacity>
-        <FileUpload  anyag_nevesmeret={this.state.anyag_nevesmeret} anyag_mennyiseg={this.state.anyag_mennyiseg} anyag_ar={this.state.anyag_ar} anyag_rendelo={this.state.anyag_rendelo} anyag_kep={this.state.anyag_kep} anyag_leiras={this.state.anyag_leiras}></FileUpload>
+        <FileUpload  hos_id={this.state.hos_id} hos_nev={this.state.hos_nev} role_id={this.state.role_id} hos_leiras={this.state.hos_leiras} kep={this.state.kep}></FileUpload>
       </View>
     </View>
     );

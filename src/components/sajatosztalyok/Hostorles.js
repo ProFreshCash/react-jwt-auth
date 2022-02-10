@@ -14,7 +14,7 @@ export default class FetchExample extends React.Component {
       bevitel1:szam
     }
 
-  fetch("http://localhost:8080/anyagtorles", {
+  fetch("http://localhost:8080/osszeshosboltorles", {
       method: "POST",
       body: JSON.stringify(bemenet),
       headers: {"Content-type": "application/json; charset=UTF-8"}
@@ -30,7 +30,7 @@ export default class FetchExample extends React.Component {
 
 
   componentDidMount(){
-    return fetch('http://localhost:8080/anyagok')
+    return fetch('http://localhost:8080/osszeshos')
       .then((response) => response.json())
       .then((responseJson) => {
 
@@ -66,14 +66,12 @@ export default class FetchExample extends React.Component {
           renderItem={({item}) => 
 
           <View >
-          <Text style={{color:"brown",fontSize:20,textAlign:"center",marginTop:15,marginBottom:5}}   >{item.anyag_nevesmeret} </Text>
-          <Text style={{color:"brown",fontSize:20,textAlign:"center",marginTop:15,marginBottom:5}}   >{item.anyag_mennyiseg} </Text>
-          <Text style={{color:"brown",fontSize:20,textAlign:"center",marginTop:15,marginBottom:5}}   >{item.anyag_ar} </Text>
-          <Text style={{color:"brown",fontSize:20,textAlign:"center",marginTop:15,marginBottom:5}}   >{item.anyag_rendelo} </Text>
-          <Image  source={{uri: 'http://localhost:8080/'+item.anyag_kep}} style={{width:300,height:300,marginLeft:"auto",marginRight:"auto"}} />  
+          <Text style={{color:"brown",fontSize:20,textAlign:"center",marginTop:15,marginBottom:5}}   >{item.hos_nev} </Text>
+          <Text style={{color:"brown",fontSize:20,textAlign:"center",marginTop:15,marginBottom:5}}   >{item.hos_leiras} </Text>
+          <Image  source={{uri: 'http://localhost:8080/'+item.kep}} style={{width:300,height:300,marginLeft:"auto",marginRight:"auto"}} />  
           <TouchableOpacity
         style={styles.kekgomb}
-        onPress={async ()=>this.szavazat(item.anyag_id)}
+        onPress={async ()=>this.szavazat(item.hos_id)}
       >
         <Text style={{color:"white",fontWeight:"bold",fontSize:15}}  >Törlés</Text>
       </TouchableOpacity>
