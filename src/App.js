@@ -13,8 +13,8 @@ import BoardUser from "./components/board-user.component";
 import BoardModerator from "./components/board-moderator.component";
 import BoardAdmin from "./components/board-admin.component";
 import Proba from "./components/sajatosztalyok/Proba";
-import Adattorles from "./components/sajatosztalyok/Adattorles";
-import Felvitel from "./components/sajatosztalyok/Felvitel";
+import Hostorles from "./components/sajatosztalyok/Hostorles";
+import Felvitel from "./components/sajatosztalyok/Hosfelvitel";
 import { Nav, Navbar, NavDropdown } from "react-bootstrap";
 
 
@@ -78,24 +78,24 @@ class App extends Component {
             <Nav className="mr-auto">
               {showModeratorBoard && ( <Nav.Link>
                   <Link to={"/mod"} className="nav-link">
-                    Moderator Board
+                    Moderator oldal
                   </Link>
               </Nav.Link>)}
               {showAdminBoard && ( <Nav.Link>
                 <Link to={"/admin"} className="nav-link">
-                  Admin Board
+                  Admin oldal
                 </Link>
               </Nav.Link>)}
 
               {currentUser && ( <Nav.Link>
                 <Link to={"/home"} className="nav-link">
-                  Home
+                  Kezdőlap
                 </Link>
               </Nav.Link>)}
 
               {currentUser && ( <Nav.Link>
                 <Link to={"/user"} className="nav-link">
-                  User
+                  Felhasználó
                 </Link>
               </Nav.Link>)}
 
@@ -106,14 +106,14 @@ class App extends Component {
               </Nav.Link>)}
               
               {showAdminBoard && ( <Nav.Link>
-                <Link to={"/Adattorles"} className="nav-link">
-                  Anyagok Törlése
+                <Link to={"/Hostorles"} className="nav-link">
+                  Hősök Törlése
                 </Link>
               </Nav.Link>)}
 
               {showAdminBoard && ( <Nav.Link>
                 <Link to={"/Felvitel"} className="nav-link">
-                  Új áru felvitele
+                  Új hős felvitele
                 </Link>
               </Nav.Link>)}
 
@@ -162,7 +162,7 @@ class App extends Component {
             <Route path="/mod" component={BoardModerator} />
             <Route path="/admin" component={BoardAdmin} />
             <Route path="/Proba" component={Proba}/>
-            <Route path="/Adattorles" component={Adattorles}/>
+            <Route path="/Hostorles" component={Hostorles}/>
             <Route path="/Felvitel" component={Felvitel}/>
             
           </Switch>
