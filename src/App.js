@@ -13,8 +13,8 @@ import BoardUser from "./components/board-user.component";
 import BoardModerator from "./components/board-moderator.component";
 import BoardAdmin from "./components/board-admin.component";
 import Proba from "./components/sajatosztalyok/Proba";
-import Hostorles from "./components/sajatosztalyok/Hostorles";
-import Felvitel from "./components/sajatosztalyok/Hosfelvitel";
+import Anyagtorles from "./components/sajatosztalyok/Anyagtorles";
+import Felvitel from "./components/sajatosztalyok/Anyagfelvitel";
 import { Nav, Navbar, NavDropdown } from "react-bootstrap";
 
 
@@ -107,13 +107,13 @@ class App extends Component {
               
               {showAdminBoard && ( <Nav.Link>
                 <Link to={"/Hostorles"} className="nav-link">
-                  Hősök Törlése
+                  Anyagok Törlése
                 </Link>
               </Nav.Link>)}
 
               {showAdminBoard && ( <Nav.Link>
                 <Link to={"/Felvitel"} className="nav-link">
-                  Új hős felvitele
+                  Új anyag felvitele
                 </Link>
               </Nav.Link>)}
 
@@ -162,8 +162,8 @@ class App extends Component {
             <Route path="/mod" component={BoardModerator} />
             <Route path="/admin" component={BoardAdmin} />
             <Route path="/Proba" component={Proba}/>
-            <Route path="/Hostorles" component={Hostorles}/>
-            <Route path="/Felvitel" component={Felvitel}/>
+            <Route path="/Anyagtorles" component={Anyagtorles}/>
+            <Route path="/Anyagfelvitel" component={Felvitel}/>
             
           </Switch>
         </div>
