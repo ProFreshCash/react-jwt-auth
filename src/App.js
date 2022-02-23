@@ -14,7 +14,7 @@ import BoardModerator from "./components/board-moderator.component";
 import BoardAdmin from "./components/board-admin.component";
 import Proba from "./components/sajatosztalyok/Proba";
 import Hostorles from "./components/sajatosztalyok/Hostorles";
-import Felvitel from "./components/sajatosztalyok/Felvitel";
+import Felvitel from "./components/sajatosztalyok/Hosfelvitel";
 import { Nav, Navbar, NavDropdown } from "react-bootstrap";
 
 
@@ -78,24 +78,24 @@ class App extends Component {
             <Nav className="mr-auto">
               {showModeratorBoard && ( <Nav.Link>
                   <Link to={"/mod"} className="nav-link">
-                    Moderator Board
+                    Moderator oldal
                   </Link>
               </Nav.Link>)}
               {showAdminBoard && ( <Nav.Link>
                 <Link to={"/admin"} className="nav-link">
-                  Admin Board
+                  Admin oldal
                 </Link>
               </Nav.Link>)}
 
               {currentUser && ( <Nav.Link>
                 <Link to={"/home"} className="nav-link">
-                  Home
+                  Kezdőlap
                 </Link>
               </Nav.Link>)}
 
               {currentUser && ( <Nav.Link>
                 <Link to={"/user"} className="nav-link">
-                  User
+                  Felhasználó
                 </Link>
               </Nav.Link>)}
 

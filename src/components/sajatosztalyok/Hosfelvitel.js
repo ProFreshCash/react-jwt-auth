@@ -7,7 +7,6 @@ export default class Bevitel extends Component {
     super(props);
     this.state = {
 
-      hos_id: "",
       hos_nev:"",
       role_id:"",
       hos_leiras:"",
@@ -19,13 +18,13 @@ export default class Bevitel extends Component {
 felvitel=async ()=>{
     //alert("megnyomva a gomb")
 
-    if (this.state.hos_id=="" || this.state.hos_nev=="" || this.state.role_id=="" || this.state.hos_leiras=="" || this.state.kep=="")
+    if (this.state.hos_nev=="" || this.state.role_id=="" || this.state.hos_leiras=="" || this.state.kep=="")
     {
       alert("Hiányzó adatok!")
       return
     }
     let bemenet={
-      bev1:this.state.hos_id,
+      
       bev2:this.state.hos_nev,
       bev3:this.state.role_id,
       bev4:this.state.hos_leiras,
@@ -57,16 +56,7 @@ felvitel=async ()=>{
       
     <View style = {{backgroundColor:'darkblue',width:'80%',borderRadius:20,alignSelf:'center'}}>
       <View style={{padding: 10}}>
-          <Text style={{padding: 10, fontSize: 22,color:'white',textAlign:'center'}}>
-              Hős id:
-          </Text>
-        <TextInput
-          placeholderTextColor="white"
-          style={{height: 40,width:'50%',alignSelf:'center',backgroundColor:'blue',borderColor:'black',color:"white"}}
-          placeholder="Pl: adatbázis szerint a következő"
-          onChangeText={(hos_id) => this.setState({hos_id})}
-          value={this.state.hos_id}
-        />
+         
 
         <Text style={{paddingTop: 10, fontSize: 22,color:'white',textAlign:'center'}}>
               Hős neve:

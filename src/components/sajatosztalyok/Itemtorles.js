@@ -14,7 +14,7 @@ export default class FetchExample extends React.Component {
       bevitel1:szam
     }
 
-  fetch("http://localhost:8080/osszeshosboltorles", {
+  fetch("http://localhost:8080/osszesitemboltorles", {
       method: "POST",
       body: JSON.stringify(bemenet),
       headers: {"Content-type": "application/json; charset=UTF-8"}
@@ -30,7 +30,7 @@ export default class FetchExample extends React.Component {
 
 
   componentDidMount(){
-    return fetch('http://localhost:8080/osszeshos')
+    return fetch('http://localhost:8080/osszesitem')
       .then((response) => response.json())
       .then((responseJson) => {
 
@@ -38,7 +38,7 @@ export default class FetchExample extends React.Component {
           isLoading: false,
           dataSource: responseJson,
         }, function(){
-console.log(JSON.stringify(responseJson))
+
         });
 
       })
@@ -71,7 +71,7 @@ console.log(JSON.stringify(responseJson))
           <Image  source={{uri: 'http://localhost:8080/'+item.kep}} style={{width:300,height:300,marginLeft:"auto",marginRight:"auto"}} />  
           <TouchableOpacity
         style={styles.kekgomb}
-        onPress={async ()=>this.szavazat(item.id)}
+        onPress={async ()=>this.szavazat(item.hos_id)}
       >
         <Text style={{color:"white",fontWeight:"bold",fontSize:15}}  >Törlés</Text>
       </TouchableOpacity>
