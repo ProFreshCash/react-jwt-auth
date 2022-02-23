@@ -106,13 +106,13 @@ class App extends Component {
               </Nav.Link>)}
               
               {showAdminBoard && ( <Nav.Link>
-                <Link to={"/Hostorles"} className="nav-link">
+                <Link to={"/Anyagtorles"} className="nav-link">
                   Anyagok Törlése
                 </Link>
               </Nav.Link>)}
 
               {showAdminBoard && ( <Nav.Link>
-                <Link to={"/Felvitel"} className="nav-link">
+                <Link to={"/Anyagfelvitel"} className="nav-link">
                   Új anyag felvitele
                 </Link>
               </Nav.Link>)}
