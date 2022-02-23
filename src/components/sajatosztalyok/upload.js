@@ -49,7 +49,7 @@ function FileUpload(props) {
         return (
             <div className="App">
                 <input type="file" onChange={saveFile} />
-                <button onClick={uploadFile}>Upload</button>
+                <button onClick={uploadFile}>Kiválasztott kép feltöltése</button>
             </div>
         );
 }
