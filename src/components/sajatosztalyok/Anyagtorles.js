@@ -9,7 +9,7 @@ export default class FetchExample extends React.Component {
   }
 
   szavazat=(szam)=>{
-   // alert(szam)
+    //alert(szam)
     var bemenet={
       bevitel1:szam
     }

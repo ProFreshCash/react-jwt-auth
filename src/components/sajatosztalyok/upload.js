@@ -22,12 +22,12 @@ function FileUpload(props) {
             );
             console.log(res);
             let bemenet={
-                bev1:props.anyag_nevesmeret,
-                bev2:props.anyag_mennyiseg,
-                bev3:props.anyag_ar,
-                bev4:props.anyag_rendelo,
-                bev5:props.anyag_kep,
-                bev6:props.anyag_leiras
+                bev1:props.anyag_neve,
+                bev2:props.anyag_leiras,
+                bev3:props.anyag_fajtaja,
+                bev4:props.anyag_merete,
+                bev5:props.anyag_ar,
+                bev6:fileName,
             }
             fetch('http://localhost:8080/uj_anyag_fel',{
       method: "POST",
