@@ -15,6 +15,12 @@ function FileUpload(props) {
         const formData = new FormData();
         formData.append("file", file);
         formData.append("fileName", fileName);
+
+        if (!fileName)
+        {
+            alert("Kép nincs feltöltve");
+            return;
+        }
         try {
             const res = await axios.post(
                 "http://localhost:8080/upload",
