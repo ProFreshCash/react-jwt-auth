@@ -8,6 +8,32 @@ export default class FetchExample extends React.Component {
     this.state ={ isLoading: true}
   }
 
+  allapotvalt=async (allapot_id)=>{
+  alert(allapot_id)
+
+    
+    let bemenet={
+      bev1:allapot_id
+    }
+
+    fetch('http://localhost:8080/allapot_valtoztat',{
+      method: "POST",
+      body: JSON.stringify(bemenet),
+      headers: {"Content-type": "application/json; charset=UTF-8"}
+    }
+       
+    )
+    .then((response) => response.text())
+    .then((szoveg) => {
+
+    alert(szoveg)
+    window.location.reload();
+    this.setState({});
+
+})
+    
+}
+
 componentDidMount(){
     return fetch('http://localhost:8080/rendelesek')
       .then((response) => response.json())
@@ -43,19 +69,37 @@ componentDidMount(){
         <FlatList
           data={this.state.dataSource}
           renderItem={({item}) => 
-
+    /*    {  item.allapot == 1      ?   
+          
+          
+          :
+        
+        
+        
+        
+        
+        
+        }
+        */
           <View >
           <Text style={{color:"brown",fontSize:20,textAlign:"center",marginTop:15,marginBottom:5}}   >{item.rendelo_neve} </Text>
           <Text style={{color:"brown",fontSize:20,textAlign:"center",marginTop:15,marginBottom:5}}   >{item.rendelt_termek_fajtaja} </Text>
           <Text style={{color:"brown",fontSize:20,textAlign:"center",marginTop:15,marginBottom:5}}   >{item.rendelt_termek_neve} </Text>
           <Text style={{color:"brown",fontSize:20,textAlign:"center",marginTop:15,marginBottom:5}}   >{item.rendeles_mennyisege} </Text>
           <Text style={{color:"brown",fontSize:20,textAlign:"center",marginTop:15,marginBottom:5}}   >{item.anyag_fajtaja} </Text>
+          <TouchableOpacity
+          onPress={async ()=>this.allapotvalt(item.rendeles_id)}>
+          <View style={styles.gomb}>
+            <Text style={styles.gombSzoveg}>Adatok felvitele</Text>
+          </View>
+        </TouchableOpacity>
           </View>       
         }
-
+          
         
           keyExtractor={({anyag_id}, index) => anyag_id}
         />
+        
       </View>
     );
   }

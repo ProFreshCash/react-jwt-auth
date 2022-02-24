@@ -16,6 +16,9 @@ import Proba from "./components/sajatosztalyok/Proba";
 import Anyagtorles from "./components/sajatosztalyok/Anyagtorles";
 import Felvitel from "./components/sajatosztalyok/Anyagfelvitel";
 import Rendelesek from "./components/sajatosztalyok/Rendelesek";
+import Rendelesfel from "./components/sajatosztalyok/Rendelesfel";
+import Anyagok from "./components/sajatosztalyok/Anyagok";
+import Kalkulator from "./components/sajatosztalyok/Kalkulator";
 import { Nav, Navbar, NavDropdown } from "react-bootstrap";
 
 
@@ -70,13 +73,19 @@ class App extends Component {
       <div>
         <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
           <Navbar.Brand href="/home">
-            <Link to={"/"} className="navbar-brand">
-              ProFreshCash
+            <Link to={"/Anyagok"} className="navbar-brand">
+              Összes termék
             </Link>
+
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav">
             <Nav className="mr-auto">
+            <Nav.Link>
+                  <Link to={"/Kalkulator"} className="nav-link">
+                    Betonalap számítás
+                  </Link>
+              </Nav.Link>
               {showModeratorBoard && ( <Nav.Link>
                   <Link to={"/mod"} className="nav-link">
                     Moderator oldal
@@ -121,6 +130,12 @@ class App extends Component {
               {showAdminBoard && ( <Nav.Link>
                 <Link to={"/Rendelesek"} className="nav-link">
                   Rendelések
+                </Link>
+              </Nav.Link>)}
+
+              {currentUser && ( <Nav.Link>
+                <Link to={"/Rendelesfel"} className="nav-link">
+                  Rendelés leadás
                 </Link>
               </Nav.Link>)}
 
@@ -172,6 +187,9 @@ class App extends Component {
             <Route path="/Anyagtorles" component={Anyagtorles}/>
             <Route path="/Anyagfelvitel" component={Felvitel}/>
             <Route path="/Rendelesek" component={Rendelesek}/>
+            <Route path="/Rendelesfel" component={Rendelesfel}/>
+            <Route path="/Anyagok" component={Anyagok}/>
+            <Route path="/Kalkulator" component={Kalkulator}/>
             
           </Switch>
         </div>
