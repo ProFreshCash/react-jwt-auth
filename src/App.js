@@ -15,6 +15,7 @@ import BoardAdmin from "./components/board-admin.component";
 import Proba from "./components/sajatosztalyok/Proba";
 import Anyagtorles from "./components/sajatosztalyok/Anyagtorles";
 import Felvitel from "./components/sajatosztalyok/Anyagfelvitel";
+import Rendelesek from "./components/sajatosztalyok/Rendelesek";
 import { Nav, Navbar, NavDropdown } from "react-bootstrap";
 
 
@@ -117,6 +118,12 @@ class App extends Component {
                 </Link>
               </Nav.Link>)}
 
+              {showAdminBoard && ( <Nav.Link>
+                <Link to={"/Rendelesek"} className="nav-link">
+                  Rendelések
+                </Link>
+              </Nav.Link>)}
+
 
             </Nav>
               {currentUser ? (
@@ -164,6 +171,7 @@ class App extends Component {
             <Route path="/Proba" component={Proba}/>
             <Route path="/Anyagtorles" component={Anyagtorles}/>
             <Route path="/Anyagfelvitel" component={Felvitel}/>
+            <Route path="/Rendelesek" component={Rendelesek}/>
             
           </Switch>
         </div>
