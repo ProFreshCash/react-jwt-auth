@@ -12,7 +12,7 @@ import Profile from "./components/profile.component";
 import BoardUser from "./components/board-user.component";
 import BoardModerator from "./components/board-moderator.component";
 import BoardAdmin from "./components/board-admin.component";
-import Proba from "./components/sajatosztalyok/Proba";
+//import Proba from "./components/sajatosztalyok/Proba";
 import Anyagtorles from "./components/sajatosztalyok/Anyagtorles";
 import Felvitel from "./components/sajatosztalyok/Anyagfelvitel";
 import Rendelesek from "./components/sajatosztalyok/Rendelesek";
@@ -109,11 +109,11 @@ class App extends Component {
                 </Link>
               </Nav.Link>)}
 
-              {currentUser && ( <Nav.Link>
+             {/* {currentUser && ( <Nav.Link>
                 <Link to={"/Proba"} className="nav-link">
                   Próba
                 </Link>
-              </Nav.Link>)}
+             </Nav.Link>)}*/}
               
               {showAdminBoard && ( <Nav.Link>
                 <Link to={"/Anyagtorles"} className="nav-link">
@@ -183,7 +183,7 @@ class App extends Component {
             <Route path="/user" component={BoardUser} />
             <Route path="/mod" component={BoardModerator} />
             <Route path="/admin" component={BoardAdmin} />
-            <Route path="/Proba" component={Proba}/>
+            {/*<Route path="/Proba" component={Proba}/>*/}
             <Route path="/Anyagtorles" component={Anyagtorles}/>
             <Route path="/Anyagfelvitel" component={Felvitel}/>
             <Route path="/Rendelesek" component={Rendelesek}/>
