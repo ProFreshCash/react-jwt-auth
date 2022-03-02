@@ -96,37 +96,157 @@ componentDidMount(){
         <FlatList
           data={this.state.dataSource}
           renderItem={({item}) => 
-    /*    {  item.allapot == 1 
+        
+        
+          <View>
+            
+    {  item.allapot == 0 
           
           ?  
           
-          
-          
-          :
-        
-        
-        
-        }
-        */
-          <View style={{backgroundColor:"green"}}>
-          <Text style={{color:"brown",fontSize:20,textAlign:"center",marginTop:15,marginBottom:5}}   >{item.rendelo_neve} </Text>
+         ( <View>  <Text style={{color:"brown",fontSize:20,textAlign:"center",marginTop:15,marginBottom:5}}   >alma </Text>
+         <Text style={{color:"brown",fontSize:20,textAlign:"center",marginTop:15,marginBottom:5}}   >{item.rendelo_neve} </Text>
           <Text style={{color:"brown",fontSize:20,textAlign:"center",marginTop:15,marginBottom:5}}   >{item.rendelt_termek_fajtaja} </Text>
           <Text style={{color:"brown",fontSize:20,textAlign:"center",marginTop:15,marginBottom:5}}   >{item.rendelt_termek_neve} </Text>
           <Text style={{color:"brown",fontSize:20,textAlign:"center",marginTop:15,marginBottom:5}}   >{item.rendeles_mennyisege} </Text>
           <Text style={{color:"brown",fontSize:20,textAlign:"center",marginTop:15,marginBottom:5}}   >{item.anyag_fajtaja} </Text>
+          
+          <View style={{flexDirection:"row"}}>
+          <View style={{flex: 1, padding: 10}}>
           <TouchableOpacity
           onPress={async ()=>this.allapotvaltfel(item.rendeles_id)}>
-          <View style={styles.gomb}>
-            <Text style={styles.gombSzoveg}>Adatok felvitele</Text>
+          <View style={styles.gomb1}>
+            <Text style={styles.gombSzoveg}>Feldolgozás alatt</Text>
           </View>
         </TouchableOpacity>
+        </View>
+
+        <View style={{flex: 1, padding: 10}}>
         <TouchableOpacity
           onPress={async ()=>this.allapotvaltle(item.rendeles_id)}>
           <View style={styles.gomb}>
-            <Text style={styles.gombSzoveg}>Adatok felvitele</Text>
+            <Text style={styles.gombSzoveg}>Befejezett</Text>
           </View>
         </TouchableOpacity>
-          </View>       
+        </View> 
+        </View>
+        </View>
+         )
+          
+          :
+
+        
+
+
+
+         null
+        }
+          
+          {  item.allapot == 1 
+          
+          ?  
+          
+         ( <View style={{backgroundColor:"green"}}>  <Text style={{color:"brown",fontSize:20,textAlign:"center",marginTop:15,marginBottom:5}}   >alma </Text>
+         <Text style={{color:"brown",fontSize:20,textAlign:"center",marginTop:15,marginBottom:5}}   >{item.rendelo_neve} </Text>
+          <Text style={{color:"brown",fontSize:20,textAlign:"center",marginTop:15,marginBottom:5}}   >{item.rendelt_termek_fajtaja} </Text>
+          <Text style={{color:"brown",fontSize:20,textAlign:"center",marginTop:15,marginBottom:5}}   >{item.rendelt_termek_neve} </Text>
+          <Text style={{color:"brown",fontSize:20,textAlign:"center",marginTop:15,marginBottom:5}}   >{item.rendeles_mennyisege} </Text>
+          <Text style={{color:"brown",fontSize:20,textAlign:"center",marginTop:15,marginBottom:5}}   >{item.anyag_fajtaja} </Text>
+          
+          <View style={{flexDirection:"row"}}>
+          <View style={{flex: 1, padding: 10}}>
+          <TouchableOpacity
+          onPress={async ()=>this.allapotvaltfel(item.rendeles_id)}>
+          <View style={styles.gomb1}>
+            <Text style={styles.gombSzoveg}>Feldolgozás alatt</Text>
+          </View>
+        </TouchableOpacity>
+        </View>
+
+        <View style={{flex: 1, padding: 10}}>
+        <TouchableOpacity
+          onPress={async ()=>this.allapotvaltle(item.rendeles_id)}>
+          <View style={styles.gomb}>
+            <Text style={styles.gombSzoveg}>Befejezett</Text>
+          </View>
+        </TouchableOpacity>
+        </View> 
+        </View>
+        </View>
+         )
+          
+          :
+
+        
+
+
+
+         null
+        }
+
+{  item.allapot == 2
+          
+          ?  
+          
+         ( <View style={{backgroundColor:"red"}}>  <Text style={{color:"brown",fontSize:20,textAlign:"center",marginTop:15,marginBottom:5}}   >alma </Text>
+         <Text style={{color:"brown",fontSize:20,textAlign:"center",marginTop:15,marginBottom:5}}   >{item.rendelo_neve} </Text>
+          <Text style={{color:"brown",fontSize:20,textAlign:"center",marginTop:15,marginBottom:5}}   >{item.rendelt_termek_fajtaja} </Text>
+          <Text style={{color:"brown",fontSize:20,textAlign:"center",marginTop:15,marginBottom:5}}   >{item.rendelt_termek_neve} </Text>
+          <Text style={{color:"brown",fontSize:20,textAlign:"center",marginTop:15,marginBottom:5}}   >{item.rendeles_mennyisege} </Text>
+          <Text style={{color:"brown",fontSize:20,textAlign:"center",marginTop:15,marginBottom:5}}   >{item.anyag_fajtaja} </Text>
+          
+          <View style={{flexDirection:"row"}}>
+          <View style={{flex: 1, padding: 10}}>
+          <TouchableOpacity
+          onPress={async ()=>this.allapotvaltfel(item.rendeles_id)}>
+          <View style={styles.gomb1}>
+            <Text style={styles.gombSzoveg}>Feldolgozás alatt</Text>
+          </View>
+        </TouchableOpacity>
+        </View>
+
+        <View style={{flex: 1, padding: 10}}>
+        <TouchableOpacity
+          onPress={async ()=>this.allapotvaltle(item.rendeles_id)}>
+          <View style={styles.gomb}>
+            <Text style={styles.gombSzoveg}>Befejezett</Text>
+          </View>
+        </TouchableOpacity>
+        </View> 
+        </View>
+        </View>
+         )
+          
+          :
+
+        
+
+
+
+         null
+        }
+
+
+
+
+
+
+
+
+
+
+
+          
+          </View> 
+          
+          
+
+
+
+
+
+
+
         }
           
         
@@ -140,12 +260,30 @@ componentDidMount(){
 
 const styles = StyleSheet.create({
   
-  kekgomb: {
+  gombSzoveg: {
     alignItems: "center",
-    backgroundColor: "blue",
-    padding: 10,
-    width:300,
     marginLeft:"auto",
     marginRight:"auto",
+    fontWeight: "bold",
+  },
+  gomb:{
+    backgroundColor: "pink",
+    padding: 10,
+    borderRadius: 30,
+    borderWidth: 2,
+    marginRight: "auto",
+    minWidth: 100,
+    height: 50,
+    alignItems: "center",
+  },
+  gomb1:{
+    backgroundColor: "pink",
+    padding: 10,
+    borderRadius: 30,
+    borderWidth: 2,
+    marginLeft: "auto",
+    minWidth: 100,
+    height: 50,
+    alignItems: "center",
   }
 });
