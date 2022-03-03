@@ -135,10 +135,6 @@ componentDidMount(){
           
           :
 
-        
-
-
-
          null
         }
           
@@ -176,10 +172,6 @@ componentDidMount(){
          )
           
           :
-
-        
-
-
 
          null
         }
@@ -219,34 +211,11 @@ componentDidMount(){
           
           :
 
-        
-
-
-
          null
         }
 
-
-
-
-
-
-
-
-
-
-
-          
           </View> 
           
-          
-
-
-
-
-
-
-
         }
           
         
