@@ -44,7 +44,7 @@ export default class FetchExample extends React.Component {
           data={this.state.dataSource}
           renderItem={({item}) => 
 
-          <View >
+          <View style={{width: 400, marginBottom: 10, borderColor: "black", borderRadius: 30, borderWidth: 2, marginLeft: "auto", marginRight: "auto"}}>
           <Text style={{color:"brown",fontSize:20,textAlign:"center",marginTop:15,marginBottom:5}}   >{item.anyag_neve} </Text>
           <Text style={{color:"brown",fontSize:20,textAlign:"center",marginTop:15,marginBottom:5}}   >{item.anyag_leiras} </Text>
           <Text style={{color:"brown",fontSize:20,textAlign:"center",marginTop:15,marginBottom:5}}   >{item.anyag_merete} </Text>
