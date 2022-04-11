@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import { StyleSheet,Text, TextInput, View,TouchableOpacity, Picker } from 'react-native';
 //import FileUpload from "./upload"
 
+//onlyuser
+
 export default class Bevitel extends Component {
   constructor(props) {
     super(props);
@@ -9,8 +11,6 @@ export default class Bevitel extends Component {
       fajtavalaszt: 0,
       anyagnevvalaszt: 0,
       rendelo_neve: "",
-      rendelt_termek_fajtaja:"",
-      rendelt_termek_neve:"",
       rendeles_mennyisege:"",
       dataSource:[],
       nevetomb: []

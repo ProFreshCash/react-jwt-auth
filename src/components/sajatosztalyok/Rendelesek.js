@@ -1,6 +1,8 @@
 import React from 'react';
 import {StyleSheet, FlatList, ActivityIndicator, Text, View, Image , TouchableOpacity } from 'react-native';
 
+//onlyadmin
+
 export default class FetchExample extends React.Component {
 
   constructor(props){
@@ -104,13 +106,13 @@ componentDidMount(){
           
           ?  
           
-         ( <View>  <Text style={{color:"brown",fontSize:20,textAlign:"center",marginTop:15,marginBottom:5}}   >alma </Text>
-         <Text style={{color:"brown",fontSize:20,textAlign:"center",marginTop:15,marginBottom:5}}   >{item.rendelo_neve} </Text>
-          <Text style={{color:"brown",fontSize:20,textAlign:"center",marginTop:15,marginBottom:5}}   >{item.rendelt_termek_fajtaja} </Text>
-          <Text style={{color:"brown",fontSize:20,textAlign:"center",marginTop:15,marginBottom:5}}   >{item.rendelt_termek_neve} </Text>
-          <Text style={{color:"brown",fontSize:20,textAlign:"center",marginTop:15,marginBottom:5}}   >{item.rendeles_mennyisege} </Text>
-          <Text style={{color:"brown",fontSize:20,textAlign:"center",marginTop:15,marginBottom:5}}   >{item.anyag_fajtaja} </Text>
-          
+         ( <View style={{marginBottom: 15}}>
+         
+         <Text style={{color:"brown",fontSize:20,textAlign:"center",marginTop:15,marginBottom:5}}   >Rendelő neve: {item.rendelo_neve} </Text>
+          <Text style={{color:"brown",fontSize:20,textAlign:"center",marginTop:15,marginBottom:5}}   >Anyag fajtája: {item.anyag_fajtaja} </Text>
+          <Text style={{color:"brown",fontSize:20,textAlign:"center",marginTop:15,marginBottom:5}}   >Anyag neve: {item.rendelt_termek_neve} </Text>
+          <Text style={{color:"brown",fontSize:20,textAlign:"center",marginTop:15,marginBottom:5}}   >Rendelt mennyiség: {item.rendeles_mennyisege} db</Text>
+
           <View style={{flexDirection:"row"}}>
           <View style={{flex: 1, padding: 10}}>
           <TouchableOpacity
@@ -142,12 +144,12 @@ componentDidMount(){
           
           ?  
           
-         ( <View style={{backgroundColor:"green"}}>  <Text style={{color:"brown",fontSize:20,textAlign:"center",marginTop:15,marginBottom:5}}   >alma </Text>
-         <Text style={{color:"brown",fontSize:20,textAlign:"center",marginTop:15,marginBottom:5}}   >{item.rendelo_neve} </Text>
-          <Text style={{color:"brown",fontSize:20,textAlign:"center",marginTop:15,marginBottom:5}}   >{item.rendelt_termek_fajtaja} </Text>
-          <Text style={{color:"brown",fontSize:20,textAlign:"center",marginTop:15,marginBottom:5}}   >{item.rendelt_termek_neve} </Text>
-          <Text style={{color:"brown",fontSize:20,textAlign:"center",marginTop:15,marginBottom:5}}   >{item.rendeles_mennyisege} </Text>
-          <Text style={{color:"brown",fontSize:20,textAlign:"center",marginTop:15,marginBottom:5}}   >{item.anyag_fajtaja} </Text>
+         ( <View style={{backgroundColor:"green", marginBottom: 15}}>
+
+         <Text style={{color:"brown",fontSize:20,textAlign:"center",marginTop:15,marginBottom:5}}   >Rendelő neve: {item.rendelo_neve} </Text>
+          <Text style={{color:"brown",fontSize:20,textAlign:"center",marginTop:15,marginBottom:5}}   >Anyag fajtája: {item.anyag_fajtaja} </Text>
+          <Text style={{color:"brown",fontSize:20,textAlign:"center",marginTop:15,marginBottom:5}}   >Anyag neve: {item.rendelt_termek_neve} </Text>
+          <Text style={{color:"brown",fontSize:20,textAlign:"center",marginTop:15,marginBottom:5}}   >Rendelt mennyiség: {item.rendeles_mennyisege} db</Text>
           
           <View style={{flexDirection:"row"}}>
           <View style={{flex: 1, padding: 10}}>
@@ -180,12 +182,12 @@ componentDidMount(){
           
           ?  
           
-         ( <View style={{backgroundColor:"red"}}>  <Text style={{color:"brown",fontSize:20,textAlign:"center",marginTop:15,marginBottom:5}}   >alma </Text>
-         <Text style={{color:"brown",fontSize:20,textAlign:"center",marginTop:15,marginBottom:5}}   >{item.rendelo_neve} </Text>
-          <Text style={{color:"brown",fontSize:20,textAlign:"center",marginTop:15,marginBottom:5}}   >{item.rendelt_termek_fajtaja} </Text>
-          <Text style={{color:"brown",fontSize:20,textAlign:"center",marginTop:15,marginBottom:5}}   >{item.rendelt_termek_neve} </Text>
-          <Text style={{color:"brown",fontSize:20,textAlign:"center",marginTop:15,marginBottom:5}}   >{item.rendeles_mennyisege} </Text>
-          <Text style={{color:"brown",fontSize:20,textAlign:"center",marginTop:15,marginBottom:5}}   >{item.anyag_fajtaja} </Text>
+         ( <View style={{backgroundColor:"red", marginBottom: 15}}> 
+
+         <Text style={{color:"brown",fontSize:20,textAlign:"center",marginTop:15,marginBottom:5}}   >Rendelő neve: {item.rendelo_neve} </Text>
+          <Text style={{color:"brown",fontSize:20,textAlign:"center",marginTop:15,marginBottom:5}}   >Anyag fajtája: {item.anyag_fajtaja} </Text>
+          <Text style={{color:"brown",fontSize:20,textAlign:"center",marginTop:15,marginBottom:5}}   >Anyag neve: {item.rendelt_termek_neve} </Text>
+          <Text style={{color:"brown",fontSize:20,textAlign:"center",marginTop:15,marginBottom:5}}   >Rendelt mennyiség: {item.rendeles_mennyisege} db</Text>
           
           <View style={{flexDirection:"row"}}>
           <View style={{flex: 1, padding: 10}}>

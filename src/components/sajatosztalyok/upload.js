@@ -30,7 +30,7 @@ function FileUpload(props) {
             let bemenet={
                 bev1:props.anyag_neve,
                 bev2:props.anyag_leiras,
-                bev3:props.anyag_fajtaja,
+                bev3:props.fajtavalaszt,
                 bev4:props.anyag_merete,
                 bev5:props.anyag_ar,
                 bev6:fileName,

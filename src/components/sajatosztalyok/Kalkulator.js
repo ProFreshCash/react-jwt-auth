@@ -6,6 +6,8 @@ import { Text, TextInput, View, TouchableOpacity, Alert } from 'react-native';
   heightPercentageToDP,
 } from 'react-native-responsive-screen';*/
 
+// user/nonuser
+
 export default class PizzaTranslator extends Component {
   constructor(props) {
     super(props);

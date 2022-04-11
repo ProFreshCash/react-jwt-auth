@@ -2,9 +2,7 @@ import React, { Component } from "react";
 import { Switch, Route, Link } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
-
 import AuthService from "./services/auth.service";
-
 import Login from "./components/login.component";
 import Register from "./components/register.component";
 import Home from "./components/home.component";
@@ -18,7 +16,9 @@ import Felvitel from "./components/sajatosztalyok/Anyagfelvitel";
 import Rendelesek from "./components/sajatosztalyok/Rendelesek";
 import Rendelesfel from "./components/sajatosztalyok/Rendelesfel";
 import Anyagok from "./components/sajatosztalyok/Anyagok";
-import Kalkulator from "./components/sajatosztalyok/Kalkulator";
+import Kalkbetonmixer from "./components/sajatosztalyok/Kalkulator";
+//import Kalkbetonkezi from "./components/sajatosztalyok/Kalkulatorbetonkezi";
+//import Kalkcsempe from "./components/sajatosztalyok/Kalkulatorcsempe";
 import { Nav, Navbar, NavDropdown } from "react-bootstrap";
 
 
@@ -73,57 +73,37 @@ class App extends Component {
       <div>
         <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
           <Navbar.Brand href="/home">
+            
             <Link to={"/Anyagok"} className="navbar-brand">
-              Összes termék
+              Építőipari termékek
             </Link>
 
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav">
             <Nav className="mr-auto">
-            <Nav.Link>
-                  <Link to={"/Kalkulator"} className="nav-link">
-                    Betonalap számítás
-                  </Link>
-              </Nav.Link>
-              {showModeratorBoard && ( <Nav.Link>
-                  <Link to={"/mod"} className="nav-link">
-                    Moderator oldal
-                  </Link>
-              </Nav.Link>)}
-              {showAdminBoard && ( <Nav.Link>
-                <Link to={"/admin"} className="nav-link">
-                  Admin oldal
-                </Link>
-              </Nav.Link>)}
-
-              {currentUser && ( <Nav.Link>
-                <Link to={"/home"} className="nav-link">
+            
+            {currentUser && ( <Nav.Link>
+                <Link to={"/Anyagok"} className="nav-link">
                   Kezdőlap
                 </Link>
               </Nav.Link>)}
 
-              {currentUser && ( <Nav.Link>
-                <Link to={"/user"} className="nav-link">
-                  Felhasználó
+            {/*{showAdminBoard && ( <Nav.Link>
+                <Link to={"/admin"} className="nav-link">
+                  Admin oldal
                 </Link>
-              </Nav.Link>)}
-
-             {/* {currentUser && ( <Nav.Link>
-                <Link to={"/Proba"} className="nav-link">
-                  Próba
-                </Link>
-             </Nav.Link>)}*/}
-              
-              {showAdminBoard && ( <Nav.Link>
-                <Link to={"/Anyagtorles"} className="nav-link">
-                  Anyagok Törlése
-                </Link>
-              </Nav.Link>)}
+            </Nav.Link>)}*/}
 
               {showAdminBoard && ( <Nav.Link>
                 <Link to={"/Anyagfelvitel"} className="nav-link">
                   Új anyag felvitele
+                </Link>
+              </Nav.Link>)}
+
+              {showAdminBoard && ( <Nav.Link>
+                <Link to={"/Anyagtorles"} className="nav-link">
+                  Anyag törlése
                 </Link>
               </Nav.Link>)}
 
@@ -133,12 +113,47 @@ class App extends Component {
                 </Link>
               </Nav.Link>)}
 
+             {/* {showModeratorBoard && ( <Nav.Link>
+                  <Link to={"/mod"} className="nav-link">
+                    Moderator oldal
+                  </Link>
+             </Nav.Link>)}*/}
+
+              {/*{currentUser && ( <Nav.Link>
+                <Link to={"/user"} className="nav-link">
+                  Felhasználó
+                </Link>
+              </Nav.Link>)}*/}
+
               {currentUser && ( <Nav.Link>
                 <Link to={"/Rendelesfel"} className="nav-link">
                   Rendelés leadás
                 </Link>
               </Nav.Link>)}
 
+            <Nav.Link>
+                  <Link to={"/Kalkulator"} className="nav-link">
+                    Betonalap számítás mixerrel
+                  </Link>
+              </Nav.Link>
+
+              <Nav.Link>
+                  <Link to={"/Kalkbetonkezi"} className="nav-link">
+                    Betonalap számítás kézi keveréssel
+                  </Link>
+              </Nav.Link>
+
+              <Nav.Link>
+                  <Link to={"/Kalkparketta"} className="nav-link">
+                    Csempe területszámítás
+                  </Link>
+              </Nav.Link>
+             
+             {/* {currentUser && ( <Nav.Link>
+                <Link to={"/Proba"} className="nav-link">
+                  Próba
+                </Link>
+             </Nav.Link>)}*/}
 
             </Nav>
               {currentUser ? (
@@ -189,7 +204,9 @@ class App extends Component {
             <Route path="/Rendelesek" component={Rendelesek}/>
             <Route path="/Rendelesfel" component={Rendelesfel}/>
             <Route path="/Anyagok" component={Anyagok}/>
-            <Route path="/Kalkulator" component={Kalkulator}/>
+            <Route path="/Kalkulator" component={Kalkbetonmixer}/>
+            {/*<Route path="/Kalkulatorbetonkezi" component={Kalkbetonkezi}/>
+            <Route path="/Kalkulatorcsempe" component={Kalkcsempe}/>*/}
             
           </Switch>
         </div>

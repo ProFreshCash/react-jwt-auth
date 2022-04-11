@@ -1,10 +1,12 @@
 import React, { Component } from 'react';
 import { Text, TextInput, View, TouchableOpacity, Alert } from 'react-native';
 import { FontAwesome5 } from '@expo/vector-icons';
-import {
+/*import {
   widthPercentageToDP,
   heightPercentageToDP,
-} from 'react-native-responsive-screen';
+} from 'react-native-responsive-screen';*/
+
+// user/nonuser
 
 export default class PizzaTranslator extends Component {
   constructor(props) {
