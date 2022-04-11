@@ -17,8 +17,8 @@ import Rendelesek from "./components/sajatosztalyok/Rendelesek";
 import Rendelesfel from "./components/sajatosztalyok/Rendelesfel";
 import Anyagok from "./components/sajatosztalyok/Anyagok";
 import Kalkbetonmixer from "./components/sajatosztalyok/Kalkulator";
-//import Kalkbetonkezi from "./components/sajatosztalyok/Kalkulatorbetonkezi";
-//import Kalkcsempe from "./components/sajatosztalyok/Kalkulatorcsempe";
+import Kalkbetonkezi from "./components/sajatosztalyok/Kalkulatorbetonkezi";
+import Kalkcsempe from "./components/sajatosztalyok/Kalkulatorcsempe";
 import { Nav, Navbar, NavDropdown } from "react-bootstrap";
 
 
@@ -138,13 +138,13 @@ class App extends Component {
               </Nav.Link>
 
               <Nav.Link>
-                  <Link to={"/Kalkbetonkezi"} className="nav-link">
+                  <Link to={"/Kalkulatorbetonkezi"} className="nav-link">
                     Betonalap számítás kézi keveréssel
                   </Link>
               </Nav.Link>
 
               <Nav.Link>
-                  <Link to={"/Kalkparketta"} className="nav-link">
+                  <Link to={"/Kalkulatorcsempe"} className="nav-link">
                     Csempe területszámítás
                   </Link>
               </Nav.Link>
@@ -205,8 +205,8 @@ class App extends Component {
             <Route path="/Rendelesfel" component={Rendelesfel}/>
             <Route path="/Anyagok" component={Anyagok}/>
             <Route path="/Kalkulator" component={Kalkbetonmixer}/>
-            {/*<Route path="/Kalkulatorbetonkezi" component={Kalkbetonkezi}/>
-            <Route path="/Kalkulatorcsempe" component={Kalkcsempe}/>*/}
+            <Route path="/Kalkulatorbetonkezi" component={Kalkbetonkezi}/>
+            <Route path="/Kalkulatorcsempe" component={Kalkcsempe}/>
             
           </Switch>
         </div>

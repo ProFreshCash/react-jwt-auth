@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Text, TextInput, View, TouchableOpacity, Alert } from 'react-native';
-//import { FontAwesome5 } from '@expo/vector-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 /*import {
   widthPercentageToDP,
   heightPercentageToDP,
@@ -61,12 +61,12 @@ export default class PizzaTranslator extends Component {
           height: 350, marginLeft: "auto", marginRight: "auto", marginTop: 10}}>
         
         <View style={{flex: 1, flexDirection: "row", marginLeft:"auto", marginRight: "auto"}}>
-        {/*<FontAwesome5 name="ruler-vertical" size={18} color="black" style={{marginTop:14}}/>*/}
+        {/*<FontAwesomeIcon icon="fa-solid fa-ruler-vertical" />*/}
         <Text style={{padding: 10,marginBottom: 5 ,  fontSize: 18, fontWeight: 'bold'}}>
           Magasság (m): 
         </Text>
         <TextInput keyboardType='numeric'
-      style={{height: 40, width: 100,borderColor: 'black', borderWidth: 3, borderRadius: 25, marginRight: "auto", textAlign:"center", fontSize: 17, marginLeft: 20}}
+      style={{height: 40, width: 100,borderColor: 'black', borderWidth: 3, borderRadius: 25, marginRight: "auto", textAlign:"center", fontSize: 17, marginLeft: 10}}
       onChangeText={this.magassagkezel}
         />
         </View>
