@@ -8,8 +8,8 @@ export default class Bevitel extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      fajtavalaszt: 0,
-      anyagnevvalaszt: 0,
+      fajtavalaszt: 1,
+      anyagnevvalaszt: 1,
       rendelo_neve: "",
       rendeles_mennyisege:"",
       dataSource:[],
@@ -96,7 +96,7 @@ felvitel=async ()=>{
           </Text>
         <TextInput
           placeholderTextColor="black"
-          style={{height: 40,width:'50%',alignSelf:'center',backgroundColor:'white',borderColor:'black',color:"white"}}
+          style={{height: 40,width:'50%',alignSelf:'center',backgroundColor:'white',borderColor:'black',color:"black"}}
           placeholder="Adja meg a nevét: "
           onChangeText={(rendelo_neve) => this.setState({rendelo_neve})}
           value={this.state.rendelo_neve}
@@ -136,7 +136,7 @@ felvitel=async ()=>{
           </Text>
         <TextInput
           placeholderTextColor="black"
-          style={{height: 40,width:'50%',alignSelf:'center',backgroundColor:'white',borderColor:'black',color:"white"}}
+          style={{height: 40,width:'50%',alignSelf:'center',backgroundColor:'white',borderColor:'black',color:"black"}}
           placeholder="PL: db szám vagy köbméterben"
           onChangeText={(rendeles_mennyisege) => this.setState({rendeles_mennyisege})}
           value={this.state.rendeles_mennyisege}

@@ -8,7 +8,7 @@ export default class Bevitel extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      fajtavalaszt: 0,
+      fajtavalaszt: 1,
       anyag_neve: "",
       anyag_leiras:"",
       anyag_merete:"",
@@ -83,7 +83,7 @@ felvitel=async ()=>{
           </Text>
         <TextInput
           placeholderTextColor="black"
-          style={{height: 40,width:'50%',alignSelf:'center',backgroundColor:'white',borderColor:'black',color:"white"}}
+          style={{height: 40,width:'50%',alignSelf:'center',backgroundColor:'white',borderColor:'black',color:"color"}}
           placeholder="Add meg az anyag nevét: "
           onChangeText={(anyag_neve) => this.setState({anyag_neve})}
           value={this.state.anyag_neve}
@@ -94,7 +94,7 @@ felvitel=async ()=>{
           </Text>
         <TextInput
           placeholderTextColor="black"
-          style={{height: 40, width:'50%',alignSelf:'center',backgroundColor:'white',marginBottom:5,textAlignVertical:'top',color:"white"}}
+          style={{height: 40, width:'50%',alignSelf:'center',backgroundColor:'white',marginBottom:5,textAlignVertical:'top',color:"color"}}
           placeholder="Add meg a leírást:"
           onChangeText={(anyag_leiras) => this.setState({anyag_leiras})}
           value={this.state.anyag_leiras}
@@ -130,7 +130,7 @@ felvitel=async ()=>{
           </Text>
         <TextInput
           placeholderTextColor="black"
-          style={{height: 40,width:'50%',alignSelf:'center',backgroundColor:'white',borderColor:'black',color:"white", marginBottom:15}}
+          style={{height: 40,width:'50%',alignSelf:'center',backgroundColor:'white',borderColor:'black',color:"black", marginBottom:15}}
           placeholder="Anyag ára: "
           onChangeText={(anyag_ar) => this.setState({anyag_ar})}
           value={this.state.anyag_ar}
