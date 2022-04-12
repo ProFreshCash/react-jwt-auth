@@ -27,7 +27,7 @@ export default class Bevitel extends Component {
           isLoading: false,
           dataSource: responseJson,
         }, function(){
-        alert(JSON.stringify(this.state.dataSource))
+        //alert(JSON.stringify(this.state.dataSource))
         });
 
       })
@@ -76,30 +76,30 @@ felvitel=async ()=>{
     
     return (
       
-    <View style = {{backgroundColor:'darkblue',width:'80%',borderRadius:20,alignSelf:'center'}}>
+    <View style = {{backgroundColor:'#D2AC79',width:'80%',borderRadius:20,alignSelf:'center', marginLeft:"auto", marginRight: "auto"}}>
       <View style={{padding: 10}}>
-          <Text style={{padding: 10, fontSize: 22,color:'white',textAlign:'center'}}>
+          <Text style={{padding: 10, fontSize: 22,color:'black',textAlign:'center'}}>
               Anyag neve:
           </Text>
         <TextInput
-          placeholderTextColor="white"
-          style={{height: 40,width:'50%',alignSelf:'center',backgroundColor:'blue',borderColor:'black',color:"white"}}
+          placeholderTextColor="black"
+          style={{height: 40,width:'50%',alignSelf:'center',backgroundColor:'white',borderColor:'black',color:"white"}}
           placeholder="Add meg az anyag nevét: "
           onChangeText={(anyag_neve) => this.setState({anyag_neve})}
           value={this.state.anyag_neve}
         />
 
-        <Text style={{paddingTop: 10, fontSize: 22,color:'white',textAlign:'center'}}>
+        <Text style={{paddingTop: 10, fontSize: 22,color:'black',textAlign:'center'}}>
               Leírása:
           </Text>
         <TextInput
-          placeholderTextColor="white"
-          style={{height: 40, width:'50%',alignSelf:'center',backgroundColor:'blue',marginBottom:5,textAlignVertical:'top',color:"white"}}
+          placeholderTextColor="black"
+          style={{height: 40, width:'50%',alignSelf:'center',backgroundColor:'white',marginBottom:5,textAlignVertical:'top',color:"white"}}
           placeholder="Add meg a leírást:"
           onChangeText={(anyag_leiras) => this.setState({anyag_leiras})}
           value={this.state.anyag_leiras}
         />
-         <Text style={{padding: 10, fontSize: 22,color:'white',textAlign:'center'}}>
+         <Text style={{padding: 10, fontSize: 22,color:'black',textAlign:'center'}}>
               Fajtája:
           </Text>
         <View style={{marginLeft: "auto", marginRight: "auto", backgroundColor:"white"}}>
@@ -114,23 +114,23 @@ felvitel=async ()=>{
         </Picker>
         </View>
 
-        <Text style={{padding: 10, fontSize: 22,color:'white',textAlign:'center'}}>
+        <Text style={{padding: 10, fontSize: 22,color:'black',textAlign:'center'}}>
               Mérete:
           </Text>
         <TextInput
-          placeholderTextColor="white"
-          style={{height: 40,width:'50%',alignSelf:'center',backgroundColor:'blue',borderColor:'black',color:"white"}}
+          placeholderTextColor="black"
+          style={{height: 40,width:'50%',alignSelf:'center',backgroundColor:'white',borderColor:'black',color:"black"}}
           placeholder="PL: magasság x szélesség x hosszúság"
           onChangeText={(anyag_merete) => this.setState({anyag_merete})}
           value={this.state.anyag_merete}
         />
 
-         <Text style={{padding: 10, fontSize: 22,color:'white',textAlign:'center'}}>
+         <Text style={{padding: 10, fontSize: 22,color:'black',textAlign:'center'}}>
               Anyag ára:
           </Text>
         <TextInput
-          placeholderTextColor="white"
-          style={{height: 40,width:'50%',alignSelf:'center',backgroundColor:'blue',borderColor:'black',color:"white"}}
+          placeholderTextColor="black"
+          style={{height: 40,width:'50%',alignSelf:'center',backgroundColor:'white',borderColor:'black',color:"white", marginBottom:15}}
           placeholder="Anyag ára: "
           onChangeText={(anyag_ar) => this.setState({anyag_ar})}
           value={this.state.anyag_ar}

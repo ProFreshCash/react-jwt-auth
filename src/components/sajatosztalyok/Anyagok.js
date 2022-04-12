@@ -46,14 +46,14 @@ export default class FetchExample extends React.Component {
           data={this.state.dataSource}
           renderItem={({item}) => 
 
-          <View style={{width: 400, marginBottom: 10, borderColor: "black", borderRadius: 30, borderWidth: 2, marginLeft: "auto", marginRight: "auto"}}>
-          <Text style={{color:"brown",fontSize:20,textAlign:"center",marginTop:15,marginBottom:5}}   >
+          <View style={{width: 400, marginBottom: 10, borderColor: "black", borderRadius: 30, borderWidth: 2, marginLeft: "auto", marginRight: "auto", backgroundColor:"#D2AC79"}}>
+          <Text style={{color:"black",fontSize:20,textAlign:"center",marginTop:15,marginBottom:5}}   >
           Anyag neve: {item.anyag_neve} </Text>
-          <Text style={{color:"brown",fontSize:20,textAlign:"center",marginTop:15,marginBottom:5}}   >Leírás: {item.anyag_leiras} </Text>
-          <Text style={{color:"brown",fontSize:20,textAlign:"center",marginTop:15,marginBottom:5}}   >Méret: {item.anyag_merete} </Text>
-          <Text style={{color:"brown",fontSize:20,textAlign:"center",marginTop:15,marginBottom:5}}   >Ár: {item.anyag_ar} Ft</Text>
-          <Text style={{color:"brown",fontSize:20,textAlign:"center",marginTop:15,marginBottom:5}}   >Fajtája: {item.anyag_fajtaja} </Text>
-          <Image  source={{uri: 'http://localhost:8080/'+item.anyag_kep}} style={{width:300,height:300,marginLeft:"auto",marginRight:"auto"}} /> 
+          <Text style={{color:"black",fontSize:20,textAlign:"center",marginTop:15,marginBottom:5}}   >Leírás: {item.anyag_leiras} </Text>
+          <Text style={{color:"black",fontSize:20,textAlign:"center",marginTop:15,marginBottom:5}}   >Méret: {item.anyag_merete} </Text>
+          <Text style={{color:"black",fontSize:20,textAlign:"center",marginTop:15,marginBottom:5}}   >Ár: {item.anyag_ar} Ft</Text>
+          <Text style={{color:"black",fontSize:20,textAlign:"center",marginTop:15,marginBottom:5}}   >Fajtája: {item.anyag_fajtaja} </Text>
+          <Image  source={{uri: 'http://localhost:8080/'+item.anyag_kep}} style={{width:300,height:300,marginLeft:"auto",marginRight:"auto", marginBottom: 15}} /> 
           </View>
         
         }
@@ -70,10 +70,11 @@ const styles = StyleSheet.create({
   
   kekgomb: {
     alignItems: "center",
-    backgroundColor: "blue",
+    backgroundColor: "#FF1111",
     padding: 10,
     width:300,
     marginLeft:"auto",
     marginRight:"auto",
+    fontWeight: 'bold'
   }
 });

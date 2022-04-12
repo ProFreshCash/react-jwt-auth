@@ -50,7 +50,7 @@ export default class PizzaTranslator extends Component {
 
   render() {
     return (
-      <View style={{padding: 10, marginLeft:"auto", marginRight: "auto", borderRadius: 15, borderColor: "blue", borderWidth: 5, marginTop: 20, width: 600,
+      <View style={{padding: 10, marginLeft:"auto", marginRight: "auto", borderRadius: 15, borderColor: "black", borderWidth: 5, marginTop: 20, width: 600,
       height: 600, backgroundColor: "lightgrey"}}>
        
         <View style={{justifyContent:"center", alignItems:"center", width: 400,height: 60, marginLeft:"auto", marginRight: "auto"}}>
