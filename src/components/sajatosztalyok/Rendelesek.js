@@ -11,7 +11,7 @@ export default class FetchExample extends React.Component {
   }
 
   allapotvaltfel=async (allapot_id)=>{
-  alert(allapot_id)
+  //alert(allapot_id)
 
     
     let bemenet={
@@ -37,7 +37,7 @@ export default class FetchExample extends React.Component {
 }
 
 allapotvaltle=async (allapot_id)=>{
-  alert(allapot_id)
+  //alert(allapot_id)
 
     
     let bemenet={
@@ -144,7 +144,7 @@ componentDidMount(){
           
           ?  
           
-         ( <View style={{backgroundColor:"#B6E5B3", marginBottom: 15,borderColor: "black", borderWidth: 2}}>
+         ( <View style={{backgroundColor:"#D27979", marginBottom: 15,borderColor: "black", borderWidth: 2}}>
 
          <Text style={{color:"black",fontSize:20,textAlign:"center",marginTop:15,marginBottom:5}}   >Rendelő neve: {item.rendelo_neve} </Text>
           <Text style={{color:"black",fontSize:20,textAlign:"center",marginTop:15,marginBottom:5}}   >Anyag fajtája: {item.anyag_fajtaja} </Text>
@@ -182,7 +182,7 @@ componentDidMount(){
           
           ?  
           
-         ( <View style={{backgroundColor:"#D27979", marginBottom: 15,borderColor: "black", borderWidth: 2}}> 
+         ( <View style={{backgroundColor:"#B6E5B3", marginBottom: 15,borderColor: "black", borderWidth: 2}}> 
 
          <Text style={{color:"black",fontSize:20,textAlign:"center",marginTop:15,marginBottom:5}}   >Rendelő neve: {item.rendelo_neve} </Text>
           <Text style={{color:"black",fontSize:20,textAlign:"center",marginTop:15,marginBottom:5}}   >Anyag fajtája: {item.anyag_fajtaja} </Text>

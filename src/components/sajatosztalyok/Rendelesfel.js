@@ -54,7 +54,7 @@ export default class Bevitel extends Component {
 }
 felvitel=async ()=>{
     //alert("megnyomva a gomb")
-    alert(this.state.fajtavalaszt)
+    //alert(this.state.fajtavalaszt)
     if (this.state.rendelo_neve=="" || this.state.rendeles_mennyisege=="")
     {
       alert("Hiányzó adatok!")
